@@ -1,26 +1,23 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Photon.Pun;
 
 namespace TSGameDev.Core.Network
 {
     public class SpawnPlayers : MonoBehaviour
     {
-        public GameObject playerPrefab;
-        public GameObject[] playerSpawnPoints;
+        public PlayerSetup[] playerSetups;
 
         private void Start()
         {
-            Vector3 playerSpawnLocation;
+            int playerPosition = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+            AssignPlayer(playerPosition);
+        }
 
-            if (playerSpawnPoints.Length == 0)
-                playerSpawnLocation = Vector3.zero;
-            else
-            {
-                int SpawnPoint = Random.Range(0, playerSpawnPoints.Length);
-                playerSpawnLocation = playerSpawnPoints[SpawnPoint].transform.position;
-            }
-            
-            PhotonNetwork.Instantiate(playerPrefab.name, playerSpawnLocation, Quaternion.identity);
+        private void AssignPlayer(int playerPos)
+        {
+            playerSetups[playerPos].gameObject.SetActive(true);
+            playerSetups[playerPos].Setup();
         }
     }
 }

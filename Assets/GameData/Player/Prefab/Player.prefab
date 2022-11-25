@@ -107,7 +107,9 @@ GameObject:
   - component: {fileID: 6280356608347653855}
   - component: {fileID: 1349857039040102250}
   - component: {fileID: 3005944623623399409}
+  - component: {fileID: 3334225833798878457}
   - component: {fileID: 6013391600083011009}
+  - component: {fileID: -8508494610467381048}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -179,6 +181,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2249f8d7926d749b772e96a2b5d877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3334225833798878457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013391600083011008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056b231d8f98f241bf5e012f2a6cf78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virutalCam: {fileID: 7891647419426655778}
 --- !u!114 &6013391600083011009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +212,44 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -8508494610467381048}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-8508494610467381048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013391600083011008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &6013391600494758247
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4029041243425624933
 Transform:
   m_ObjectHideFlags: 0

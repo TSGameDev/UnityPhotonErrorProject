@@ -1,7 +1,5 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
-using Photon.Realtime;
 
 namespace TSGameDev.Core.Network
 {
@@ -15,7 +13,6 @@ namespace TSGameDev.Core.Network
         public override void OnConnectedToMaster()
         {
             PhotonNetwork.JoinLobby();
-            PhotonNetwork.AutomaticallySyncScene = true;
         }
 
         public override void OnJoinedLobby()
